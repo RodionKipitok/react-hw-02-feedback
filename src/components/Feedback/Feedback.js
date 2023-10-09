@@ -100,8 +100,3 @@ class ReviewsWidget extends Component {
 export default ReviewsWidget;
 
 
-{/* 
-<li><span className="statistics__value">Neutral:{this.state.neutral}</span></li>
-<li><span className="statistics__value">Bad:{this.state.bad}</span></li>
-<li><span className="statistics__value">Total: {this.countTotalFeedback()}</span></li>
-<li><span className="statistics__value">Positive feedback:{this.countPositiveFeedbackPercentage().toFixed()}%<span><li></li> */}
