@@ -3,32 +3,39 @@ import '../Feedback/feedback.css';
 
 
 class ReviewsWidget extends Component {
+
+	static defaultTotal = {
+		total: 0,
+	}
+
+
+
 	state = {
 		good: 0,
 		neutral: 0,
-		bad: 0
+		bad: 0,
 	}
 
 
 	leaveFeedback = (event) => {
 
-		console.log(event);
-		console.log(event.target.id);
 
-     switch (event.target.id) {
+      switch (event.target.id) {
 		case 'good':
 		    	
       
 			return this.setState((prevState) => {
-
-				console.log({good: prevState.good + 1,}.good);
+			
 				return {good: prevState.good + 1,};
+
 			})
 	   
 		case 'neutral':
 			
 			return this.setState((prevState) => {
+				
 				return {neutral: prevState.neutral + 1,}
+
 			})	
 
 		case 'bad':
@@ -39,25 +46,29 @@ class ReviewsWidget extends Component {
 		default:
 			break;
 	  }
- 
+
+     
+
+	};
+
+	countTotalFeedback = () => {
+
+		const {good,neutral,bad} = this.state;
+
+		return good + neutral + bad;
 
 	}
 
-	countTotalFeedback = (event) => {
-      this.setState( (prevState) => {
-        
-			return {
-				total: prevState.good + prevState.neutral + prevState.bad
-			}
 
-		})
-	  
-
-	    
-	};
 
 	countPositiveFeedbackPercentage = () => {
 
+		const {good} = this.state
+
+		const totalFeedback = this.countTotalFeedback;
+
+		return totalFeedback === 0 ? 0 : (good / totalFeedback()) * 100;
+ 
 
 	}
 
@@ -72,14 +83,25 @@ class ReviewsWidget extends Component {
 		   </ul>
 			<ul className="list__statistics">
 			  <h2>Statistics</h2>
+				{this.countTotalFeedback() === 0 ? <p>There is no feedback</p> : 
+				<>
 				<li><span className="statistics__value'">Good:{this.state.good}</span></li>
-				<li><span className="statistics__value">Neutral:{this.state.neutral}</span></li>
+				<li><span className="statistics__value'">Neutral:{this.state.neutral}</span></li>
 				<li><span className="statistics__value">Bad:{this.state.bad}</span></li>
-				<li><span className="statistics__value">Total:{this.state.total}</span></li>
-				<li><span className="statistics__value">Positive feedback:43%</span></li>
+            <li><span className="statistics__value">Total: {this.countTotalFeedback()}</span></li>
+           <li><span className="statistics__value">Positive feedback:{this.countPositiveFeedbackPercentage().toFixed()}%</span></li> 
+			  </>
+				 }
 			</ul>
 		</section>;
 	};
 };
 
 export default ReviewsWidget;
+
+
+{/* 
+<li><span className="statistics__value">Neutral:{this.state.neutral}</span></li>
+<li><span className="statistics__value">Bad:{this.state.bad}</span></li>
+<li><span className="statistics__value">Total: {this.countTotalFeedback()}</span></li>
+<li><span className="statistics__value">Positive feedback:{this.countPositiveFeedbackPercentage().toFixed()}%<span><li></li> */}
