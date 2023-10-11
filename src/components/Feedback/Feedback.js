@@ -1,5 +1,10 @@
 import React, { Component } from "react";
+import Section from "./Section";
+import Statistics from "./Statistics";
+import FeedbackOptions from "./FeedbackOptions";
 import '../Feedback/feedback.css';
+
+
 
 
 class ReviewsWidget extends Component {
@@ -15,6 +20,10 @@ class ReviewsWidget extends Component {
 		neutral: 0,
 		bad: 0,
 	}
+
+
+
+
 
 
 	leaveFeedback = (event) => {
@@ -73,30 +82,16 @@ class ReviewsWidget extends Component {
 	}
 
 	render() {
-
-		return <section className="widget">
+     
+		return <Section>
 			<h1 className="widget__title">Please leave feedback</h1>
-		   <ul className="list__btn">
-			<li><button type="button" className="btn" id="good" onClick={this.leaveFeedback} >Good</button></li>
-			<li><button type="button" className="btn" id="neutral" onClick={this.leaveFeedback}>Neutral</button></li>
-			<li><button type="button" className="btn" id="bad" onClick={this.leaveFeedback}>Bad</button></li>
-		   </ul>
-			<ul className="list__statistics">
-			  <h2>Statistics</h2>
-				{this.countTotalFeedback() === 0 ? <p>There is no feedback</p> : 
-				<>
-				<li><span className="statistics__value'">Good:{this.state.good}</span></li>
-				<li><span className="statistics__value'">Neutral:{this.state.neutral}</span></li>
-				<li><span className="statistics__value">Bad:{this.state.bad}</span></li>
-            <li><span className="statistics__value">Total: {this.countTotalFeedback()}</span></li>
-           <li><span className="statistics__value">Positive feedback:{this.countPositiveFeedbackPercentage().toFixed()}%</span></li> 
-			  </>
-				 }
-			</ul>
-		</section>;
+			<FeedbackOptions  onLeaveFeedback={this.leaveFeedback}/>
+	     <Statistics good = {this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback}  positivePercentage={this.countPositiveFeedbackPercentage}/>
+	     </Section>
 	};
 };
 
 export default ReviewsWidget;
 
 
+// good = {this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage}
