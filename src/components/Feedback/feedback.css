@@ -1,5 +1,4 @@
 .mainSection{
- position: relative;
  width: 500px;
  height: 500px;
  margin: 30px auto;
@@ -11,7 +10,6 @@
 }
 
 .statisticsSection{
-   position: absolute;
 	top: 173px;
 	left: 411px;
 	width: 400px;
