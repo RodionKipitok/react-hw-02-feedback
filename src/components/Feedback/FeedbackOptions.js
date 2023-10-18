@@ -1,24 +1,20 @@
 import React from "react";
 
-
-
-function FeedbackOptions(data){
+function FeedbackOptions({options,onLeaveFeedback}){
  
-	const {onLeaveFeedback} = data;
 
-	
+	return (
+		<div className="list__btn">
 
-	return(
+		{options.map(item => (
 
-  
+			<button key={item} type="button" className="btn" id={item} onClick={onLeaveFeedback}  >{item}</button>	))}
 
-		<ul className="list__btn">
-		<li><button type="button" className="btn" id="good" onClick={onLeaveFeedback} >Good</button></li>
-		<li><button type="button" className="btn" id="neutral" onClick={onLeaveFeedback}>Neutral</button></li>
-		<li><button type="button" className="btn" id="bad" onClick={onLeaveFeedback}>Bad</button></li>
-		</ul>
-	
-	);
+		</div>
+	)
+
+	 
 }
-
 export default FeedbackOptions;
+
+	

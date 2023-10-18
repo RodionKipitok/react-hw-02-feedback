@@ -3,6 +3,12 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  background-image:url(https://bean-roast.ru/image/catalog/article/2019-02/18-02-2019-02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right bottom;
+ 
+  
 }
 h1,
 h2,
