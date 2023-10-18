@@ -87,11 +87,11 @@ render() {
 
   return(
     <>
-    <Section title={'Please leave feedback'} style={'mainSection'}>
+    <Section title={'Please leave feedback'} typeOfStyles={'mainSection'}>
       <FeedbackOptions options={nameBtn} onLeaveFeedback={this.leaveFeedback} />
     </Section>
 
-        <Section style={'statisticsSection'}  title={'Statistics'}>
+        <Section typeOfStyles={'statisticsSection'}  title={'Statistics'}>
           <>
           
           {total() === 0 ? ( <Notification message={'There is no feedback'}/>)
