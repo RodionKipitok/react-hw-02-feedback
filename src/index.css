@@ -4,14 +4,8 @@ body {
   position: relative;
   font-family: sans-serif;
   line-height: 1.5;
-<<<<<<< HEAD
   background-image:url(https://bean-roast.ru/image/catalog/article/2019-02/18-02-2019-02.jpg);
-=======
-  background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbdeNsbk3aoM6tZqL4ifXsCNBtjnUBlASXsQ&usqp=CAU);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right bottom;
->>>>>>> 54d0e6bc771a56969151f1186c99feb682f23a6f
+
  
   
 }
