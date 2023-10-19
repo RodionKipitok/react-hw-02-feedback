@@ -3,7 +3,10 @@
 }
 
 .mainSection{
+<<<<<<< HEAD
  
+=======
+>>>>>>> 54d0e6bc771a56969151f1186c99feb682f23a6f
  width: 500px;
  height: 500px;
  margin: 0 auto;
@@ -15,9 +18,15 @@
 }
 
 .statisticsSection{
+<<<<<<< HEAD
    position: absolute;
 	top: 161px;
 	left: 413px;
+=======
+  position: absolute;
+	top: 173px;
+	left: 411px;
+>>>>>>> 54d0e6bc771a56969151f1186c99feb682f23a6f
 	width: 400px;
 	height: 300px;
 
