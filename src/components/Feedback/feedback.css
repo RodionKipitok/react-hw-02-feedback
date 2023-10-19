@@ -1,8 +1,12 @@
+#root{
+	position: relative;
+}
+
 .mainSection{
- position: relative;
+ 
  width: 500px;
  height: 500px;
- margin: 30px auto;
+ margin: 0 auto;
  border: 1px solid black;
  border-radius: 5px;
  box-shadow: 0px 8px 24px -8px rgba(66, 68, 90, 1);
@@ -12,12 +16,11 @@
 
 .statisticsSection{
    position: absolute;
-	top: 173px;
-	left: 411px;
+	top: 161px;
+	left: 413px;
 	width: 400px;
 	height: 300px;
-	margin: 30px auto;
-	/* border: 1px solid black; */
+
 	border-radius: 5px;
 	box-shadow: 0px 8px 24px -8px rgba(66, 68, 90, 1);
 	background-color:  rgb(209, 208, 208);
@@ -31,6 +34,7 @@
  
 
 .widget__title{
+	padding-top: 10px;
 	text-align: center;
 
 }
@@ -64,6 +68,8 @@
 
 .list__statistics{
 	
+	top: 173px;
+	left: 411px;
 	margin-top: 11px;
    margin-left: 20px;
 	list-style: none;
